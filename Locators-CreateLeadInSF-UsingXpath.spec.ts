@@ -1,5 +1,5 @@
 
-/* In this program used only the xpaths to automate the salesforce application to create lead 
+/* In this program used only the xpaths and playwright inbuilt locators to automate the salesforce application to create lead 
 and verify that the lead name is created */
 
 import { expect, test } from "@playwright/test";
