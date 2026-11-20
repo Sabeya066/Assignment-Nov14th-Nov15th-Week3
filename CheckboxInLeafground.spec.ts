@@ -29,6 +29,12 @@ test("Handling checkboxes in Leafground", async ({ page }) => {
 
     await page.locator("//li[@data-item-value='Istanbul']//label").click();
 
+    await expect(page.locator("(//label[text()='Istanbul'])[2]")).toBeChecked();
+
     await page.locator("//li[@data-item-value='Brasilia']//label").click();
+
+    await page.locator("//li[@data-item-value='Paris']//label").click();
+
+    await page.locator("//li[@data-item-value='Rome']//label").click();
 
 })
