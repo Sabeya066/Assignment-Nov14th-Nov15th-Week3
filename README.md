@@ -30,7 +30,11 @@ In this program we are going to handle dropdown by interacting with it.
 #About Locators-EditLead-Leaftaps-UsingXpath File
 In this program using xpath to edit the lead of leaptap's application
 
+#About Locators-CreateLeadInSF-UsingXpath File
+__n this program used only the xpaths and playwright inbuilt locators to automate the salesforce application to create lead 
+and verify that the lead name is created
 
+r
 
 
 
