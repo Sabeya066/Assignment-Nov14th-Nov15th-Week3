@@ -7,11 +7,11 @@ test("Using xpaths only for creating new account in SF", async ({ page }) => {
 
     await page.goto("https://login.salesforce.com/");
 
-    await page.locator("//input[@id='identifier-11']").fill("Sabeya066@gmail.com");
+    await page.locator("//input[@id='identifier-11']").fill("process.env.SF_USER!");
 
     await page.keyboard.press("Enter");
 
-    await page.locator("//input[@name='password']").fill("Sabeya@salesforce2");
+    await page.locator("//input[@name='password']").fill("process.env.SF_PASS!");
 
     await page.locator("//button[@type='button']/parent::identitylogin-button").click();
 
