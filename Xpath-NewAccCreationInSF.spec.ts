@@ -19,8 +19,6 @@ test("Using xpaths only for creating new account in SF", async ({ page }) => {
 
     await page.locator("//input[@id='emc']").click();
 
-    await page.pause();
-
     await page.locator("//input[@value='Verify']").click();
 
     await page.locator("//div[@class='slds-icon-waffle']").click();
