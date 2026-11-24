@@ -22,8 +22,6 @@ test("Using xpaths only for creating Lead in SF", async ({ page }) => {
 
     await page.locator("//input[@id='emc']").click();
 
-    await page.pause();
-
     await page.locator("//input[@value='Verify']").click();
 
     await page.locator("//div[@class='slds-r5']").click();
