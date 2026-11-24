@@ -4,7 +4,7 @@
 import { test, expect } from "@playwright/test";
 
 test("Interacting with dropdown In Leafground", async ({ page }) => {
-    ""
+    
     await page.goto("https://leafground.com/select.xhtml");
 
     await page.locator("[class='ui-selectonemenu']").selectOption({ label: 'Selenium' });
