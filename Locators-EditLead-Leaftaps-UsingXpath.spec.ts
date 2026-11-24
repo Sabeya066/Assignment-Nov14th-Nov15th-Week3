@@ -45,6 +45,8 @@ test("Using xpath only to edit the lead of Leaftap's application", async ({ page
     await page.waitForLoadState("domcontentloaded");
 
     await expect(page.locator("//span[text()='Company Name']/following::span[contains(text(),'CTS')]")).toBeVisible();
+    await expect(page.locator("#viewLead_companyName_sp")).toContainText("CTS");
+
     console.log("The value is updated to CTS successfully")
 
 })
