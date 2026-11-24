@@ -23,7 +23,7 @@ test("Handling checkboxes in Leafground", async ({ page }) => {
 
     await expect(page.locator("//span[text()='Checked']")).toBeVisible();
 
-    await expect(page.locator("//h5[text()='Verify if check box is disabled']/following::div[@class='ui-selectbooleancheckbox ui-chkbox ui-widget']")).toBeDisabled;
+    await expect(page.locator("[aria-label='Disabled']")).toBeDisabled();
 
     await page.locator("//input[contains(@id, 'multiple_focus')]/parent::div/parent::div").click();
 
