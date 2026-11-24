@@ -41,6 +41,4 @@ In this program used only Xpath's and playwright inbuilt locator to automate the
 In this program we are going to automate the interactions with radio buttons in leafground radio page
 
 # About AutoWaits-Leafground File
-//In this program we are going to implement the various wait Strategies
-
-
+In this program we are going to implement the various wait Strategies.
