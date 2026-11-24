@@ -1,7 +1,7 @@
 
 // Using playwright to logging into the salesforce logging in page
 
-import { test } from "@playwright/test";
+import { test, expect } from "@playwright/test";
 
 test("Logging into the Salesforce application using page fixture", async ({ page }) => {
 
@@ -12,16 +12,21 @@ test("Logging into the Salesforce application using page fixture", async ({ page
     //Used different CSS locatorts to locate the web elements
 
     //1) Used id to locate username- I used # and got an error couldn't locate the element so i have given with attribute name and value
-    await page.locator("[id='username']").fill("yuvarani.sekar@testleaf.com");
+    await page.locator("[name='identifier']").fill("yuvarani.sekar@testleaf.com");
 
-    //2) Used class with value to locate login button
-    await page.locator("[class='button r4 wide primary']").first().click();
+    //2) Used tagname with attribute name and value to locate continue button
+    await page.locator("button[type='button']").click();
 
-    //3) Used id without Attribute name to locate the password field
-    await page.locator("#password").fill("TestLeaf@2028");
+    //3) Used Attribut name with value to locate the password field
+    await page.locator("[aria-label='Username']").fill("TestLeaf@2028");
 
     //4) Used tag name with attribute name and value to locate login
-    await page.locator("input[name='Login']").click();
+    await page.locator("button[type='button']").nth(1).click();
+
+    await expect(page.locator("#emc")).toBeEditable();
+    console.log("We have got textbox for verification page to enter otp")
 
     //Have not used assertion after logging in since I have used Yuva's credentials
 })
+
+ // O/P: We have got textbox for verification page to enter otp
