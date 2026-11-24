@@ -1,5 +1,5 @@
 
-//In this program we are going to hanle dropdown by interacting with it.
+//In this program we are going to handle dropdown by interacting with it.
 
 import { test, expect } from "@playwright/test";
 
@@ -24,11 +24,11 @@ test("Interacting with dropdown In Leafground", async ({ page }) => {
 
     await page.locator("//label[text()='Select Country']").click();
 
-    await page.locator("[data-label='Germany']").click();
+    await page.getByRole("option", { name: "India" }).click();
 
-    await page.locator("[data-label='USA']").click();
+    await page.locator("//label[text()='Select City']").click();
 
-    await page.locator("//label[text()='Select City']").isEnabled();
+    await page.getByRole("option", { name: "Chennai" }).click();
 
     await page.locator("[aria-label='Show Options']").click();
 
@@ -53,7 +53,9 @@ test("Interacting with dropdown In Leafground", async ({ page }) => {
 
     await page.locator("[data-label='English']").click();
 
-    await page.locator("//label[text()='Select Values']").isEnabled();
+    await page.locator("//label[text()='Select Values']").click();
+
+    await page.getByRole("option", { name: "One" }).click();
 
 })
 
