@@ -15,7 +15,7 @@ available in it/ This program has both hard and soft assertions in it.
 # About UsingAdvXpath-LeaftapsApplication File - ClassRoomActivity - Nov15th
 In this program used only Advanced xpath's to login to the leaftap's application and perform all the necessary steps
 
-# About PVR File - Marathon - Nov20th
+# About Pvr-CheckoutFlow File - Marathon - Nov20th
 In this program have automated the PVR flow based on the scenario given.
 
 # About CheckboxInLeafground File
