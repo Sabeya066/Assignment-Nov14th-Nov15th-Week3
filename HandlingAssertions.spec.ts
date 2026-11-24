@@ -25,10 +25,12 @@ test("Handling both Hard and Soft Assertions", async ({ page }) => {
     await nameField.fill("Sabeya");
 
     //Used GrandParent-Grandchild to locate the Error box
-    let errorTextbox = page.locator("//form[@name='j_idt106']//input[@name='j_idt106:thisform:age']");
+    let errorTextbox = page.locator("//h5[text()='Just Press Enter and confirm error message*']/following::input/following::input[@role='textbox' and contains(@name, 'age')]");
+    errorTextbox.press("Enter");
 
+    await expect(page.locator("//span[text()='Age is mandatory']")).toBeVisible();
     //Used Hard Asssertion to check if the textbox is disabled for a editable text box using soft Assertion
-    await expect.soft(errorTextbox).toBeDisabled();
+    await expect.soft(errorTextbox).toBeEnabled();
     console.log("Used soft Assertion so test continue to execute even if the assertion fails");
 
     //Used basic xpath to locate the textbox with existing text
