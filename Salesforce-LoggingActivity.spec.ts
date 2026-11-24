@@ -12,13 +12,13 @@ test("Logging into the Salesforce application using page fixture", async ({ page
     //Used different CSS locatorts to locate the web elements
 
     //1) Used id to locate username- I used # and got an error couldn't locate the element so i have given with attribute name and value
-    await page.locator("[name='identifier']").fill("yuvarani.sekar@testleaf.com");
+    await page.locator("[name='identifier']").fill("process.env.SF_USER!");
 
     //2) Used tagname with attribute name and value to locate continue button
     await page.locator("button[type='button']").click();
 
     //3) Used Attribut name with value to locate the password field
-    await page.locator("[aria-label='Username']").fill("TestLeaf@2028");
+    await page.locator("[aria-label='Username']").fill("process.env.SF_PASS!");
 
     //4) Used tag name with attribute name and value to locate login
     await page.locator("button[type='button']").nth(1).click();
