@@ -81,8 +81,8 @@ test("Create Lead in Leaftap's application", async ({ page }) => {
     await page.locator("input[value='Create Lead']").click();
 
     //Used assertion to check if the lead is created
-    await expect(page).toHaveURL(/viewLead?/);
-    console.log("Lead Successfully created")
+    await expect(page).toHaveURL(/viewLead/);
+    console.log("Lead Successfully created");
 })
 
 /* O/P: The count of source dropdown is: 13
