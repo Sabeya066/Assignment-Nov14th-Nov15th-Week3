@@ -37,4 +37,15 @@ test("Handling checkboxes in Leafground", async ({ page }) => {
 
     await page.locator("//li[@data-item-value='Rome']//label").click();
 
+    const expectedValues = ["Paris", "Istanbul", "Rome", "Brasilia"];
+
+    const selectedOptions = page.locator('li.ui-selectcheckboxmenu-checked');
+
+    for (let i = 0; i < expectedValues.length; i++) {
+
+        await expect(selectedOptions.nth(i))
+            .toContainText(expectedValues[i]);
+
+    }
+
 })
